@@ -69,7 +69,7 @@ async function getContent(url) {
 		let chapContent = $.html().match(/var initialValue = \[(.+?)\];/)[1];
 			chapContent = JSON.parse("[" + chapContent + "]");
 			chapContent = chapContent.join('<br />');
-			chapContent = chapContent.replace(/(?:\s*<br \/>){3,}/g, '');
+			chapContent = chapContent.replace(/(?:\s*<br \/>){3,}/g, '<br /><br />');
 			chapContent = chapContent.replace(/\\/g, '');
 			chapContent = chapContent.replace(/(?:!\[(.*?)\]\((.*?)\))/g, ''); // xoa markdown
 			console.log(chapTitle);
